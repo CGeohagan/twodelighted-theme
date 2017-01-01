@@ -1,0 +1,203 @@
+.sidebar_area {
+	background-color: $violet;
+}
+
+.widget {
+	clear: both;
+	margin: 0;
+	padding: 0 0 20px;
+}
+
+.widget-title {
+	color: $white;
+	text-align: center;
+	padding-bottom: .9em;
+}
+
+.widget ul {
+	margin: 0;
+	ul {
+		margin-left: 1.5em;
+	}
+}
+
+.textwidget {
+	svg {
+		fill: none;
+		stroke: none;
+		display: block;
+    	margin: 0 auto;
+	}
+}
+
+.lumos1 {
+	stroke: $white;
+	stroke-width: 2;
+    stroke-dasharray: 1212.96;
+    stroke-dashoffset: 1212.96;
+    fill: $white;
+    animation: dash 10s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+  0% { fill-opacity: 0 }
+  100% { fill-opacity: 1 }
+}
+
+#tertiary1 {
+	border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+	aside {
+		width: 100%;
+	}
+	#wp-subscribe {
+		background: none;
+		padding: 0;
+		input.email-field {
+			color: $dark-grey;
+			background: $white;
+		}
+		input.submit {
+			color: $white;
+			background: $violet;
+			padding-top: 10px;
+			margin-top: 0;
+		}
+	}
+
+}
+
+#tertiary2 {
+	border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+	aside {
+		width: 100%;
+	}
+}
+
+#tertiary1, #tertiary2 {
+	@extend %flex;
+	@extend %flex-wrap;
+	.widget {
+		padding: 40px;
+	    border: white 1px solid;
+	}
+}
+
+/* Services Images */
+
+#secondary {
+	//background-color: $color1;
+	width: 100%;
+	margin: 0 auto;
+	padding: 90px 60px;
+
+	.widget.widget_image {
+		padding: 5px;
+		box-sizing: border-box;
+		float: left;
+		width: 100%;
+		clear: none;
+		}
+
+	.jetpack-image-container {
+		position: relative;
+		display: block;
+		
+
+		:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: none;
+			z-index: 200;
+		}
+		}
+
+		img {
+			width: 100%;
+			display: block;
+		}
+
+		.wp-caption-text {
+			position: absolute;
+			background-color: rgba(255, 255, 255, 0.7);
+			font-size: 100%;
+			padding: 10px;
+			left: 15%;
+			right: 15%;
+			top: 60%;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: .15em;
+			font-weight: 600;
+			color: #000;
+
+			&:hover {
+				background-color: $light-grey;
+			}
+		}
+	}
+
+/* Media Queries */
+
+@media (min-width: $s) {
+
+	#secondary {
+		.widget.widget_image {
+				padding: 10px;
+				width: 50%;
+		}
+	}
+
+	#tertiary1 {
+		aside {
+			width: 50%;
+		}
+	}
+
+	#tertiary2 {
+		aside {
+			width: 33%;
+		}
+		.widget_text {
+			width: 34%;
+		}
+	}
+
+	#tertiary1, #tertiary2 {
+		flex-wrap: nowrap;
+  		-webkit-flex-wrap: nowrap;
+		.widget {
+			padding: 20px;
+		}
+	}
+}
+
+
+/* Special Classes */
+.no-border {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding:  0;
+}
+
+/* Search Widget */
+.widget_search {
+	form {
+		margin: 0 0 10px;
+	}
+	#s {
+		width: 95%;
+		display: inline-block;
+	}
+}

@@ -1,0 +1,31 @@
+/*********** Header Styles ***********/
+
+.main-header {
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+}
+
+#site-header {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	@extend %flex;
+	@extend %flex-column;
+	@extend %flex-space;
+}
+
+/*********** Media Queries ***********/
+
+@media (min-width: $m) {
+
+	#site-header {
+		padding-bottom: 20px;
+		flex-direction: row;
+  		-webkit-flex-direction: row; 
+  		justify-content: space-between;
+  		-webkit-justify-content: space-between;
+	}
+
+
+}

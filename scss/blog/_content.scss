@@ -1,0 +1,101 @@
+.archive-header {
+	.type-post {
+		margin: 2% auto 4%;
+	}
+}
+
+.type-post {
+	background-color: $white;
+	max-width: $max-width;
+	margin: 8% auto;
+	p, .entry-meta {
+		padding: 0 5%;
+		margin: 1.5em 0;
+	}
+	img {
+		display: block;
+    	max-width: 111.11%;
+    	height: auto;
+    	margin: 0 -5.555%;
+	}
+}
+
+.entry-title,
+.entry-title a {
+	clear: both;
+	color: $text;
+}
+.entry-meta {
+	@extend %flex;
+	@extend %flex-column;
+	.post-tags {
+		color: $violet;
+	}
+}
+
+.category-header {
+	background-color: $violet;
+	color: $white;
+	margin: -50% 0 15px;
+	display: inline-block;
+	padding: .8em;
+}
+
+.more {
+	text-align: center;
+}
+
+.more-tag {
+	background-color: $light-grey;
+	color: $dark-grey;
+	display: inline-block;
+	padding: .8em;
+	margin: 1.5em 0;
+	border: 3px double $dark-grey;
+	&:hover {
+		background-color: $dark-grey;
+		color: $white;
+		border-color: $white;
+	}
+}
+
+span.load-more {
+    margin: 2em auto 4em;
+    display: block;
+    width: 50%;
+    padding: 1em;
+    text-transform: uppercase;
+    color: $white;
+    cursor: pointer;
+    background: $dark-grey;
+    text-align: center;
+
+    @extend %transition;
+    &:hover {
+    	color: $dark-grey;
+    	background: $white;
+    }
+}
+
+
+/* Handle sticky posts */
+.sticky {	
+}
+
+.thumbnail-wrapper img {
+    margin: 0px;
+    max-width: 100%;
+    display: block;
+}
+
+
+@media (min-width: $xs) {
+
+	.entry-meta {
+		flex-direction: row;
+  		-webkit-flex-direction: row; 
+		justify-content: space-between;
+  		-webkit-justify-content: space-between;
+	}
+
+}

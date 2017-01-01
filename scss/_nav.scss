@@ -1,0 +1,280 @@
+/*********** Navigation and Menu Styles ***********/
+
+.access {
+	margin-right: 4px;
+}
+
+
+.access, .mobile-access {
+	margin: 0;
+	div {
+		z-index: 10;
+		padding: 0px;
+		line-height: 45px;
+		width: 100%;
+		background-color: $white;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	ul {
+		clear: left;
+		padding-left: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		vertical-align: middle;		
+		
+		a {
+			display: block;
+			padding: 8px 7px;
+			margin: 0;
+			text-decoration: none;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				color: $hover;
+			}
+		}
+	}
+		
+}
+
+.access li {
+	display: inline-block;
+
+	ul {
+		position: absolute;
+		z-index: 99999;
+		top: 100%;
+		display: none;
+		text-align: left;
+		padding: 8px;
+		background-color: $dark-grey;
+		opacity: .9;
+		width: 300px;
+		a {
+			color: $white;
+		}
+		li {
+			display: block;
+		}
+	}
+
+	&:hover > ul {
+		display: block;
+	}
+}
+
+input#s {
+	border: none;
+	border-bottom: 2px solid $dark-grey;
+	height: 45px;
+	position: absolute;
+	width: 100%;
+}
+
+.header-search {
+	height: 50px;
+	margin-bottom: 10px;
+
+}
+
+.header-search-button, .header-exit-button, .menu-button {
+    padding: 10px;
+    width: 47px;
+    cursor: pointer;
+    svg {
+    	width: 100%;
+    }
+}
+
+.menu-button {
+	width: 52px;
+}
+
+.header-exit-button, .header-search {
+	display: none;
+
+}
+
+#logo {
+	margin: 0 auto;
+}
+
+
+#logo svg {
+    width: 275px;
+    height: 80px;
+    display: block;
+    text-align: center;   
+    &:hover,
+    &:focus {
+    	fill: $hover;
+    	stroke: $hover;
+		transform:scale(1.05);
+    }
+}
+
+.path1 {
+	stroke: $dark-grey;
+	stroke-width: 3;
+    stroke-dasharray: 21014;
+    stroke-dashoffset: 21014;
+    fill: $dark-grey;
+    animation: dash 20s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+  0% { fill-opacity: 0 }
+  100% { fill-opacity: 1 }
+}
+
+.primary-nav, .mobile-nav {
+	@extend %flex-align;
+	@extend %transition;
+	svg {
+		&:hover,
+		&:focus {
+			color: $hover;
+			transform:scale(1.1);
+		}
+	}
+}
+
+.mobile-nav {
+	@extend %flex;
+	@extend %flex-space;
+	margin-top: 10px;
+
+}
+
+.mobile-access li {
+	display: block;
+	background-color: $violet;
+	a {
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+	li {
+		background-color: $light-grey;
+		a:hover {
+			color: $violet;
+		}
+	}
+	div {
+		border-top: 2px solid $dark-grey;
+		border-bottom: 2px solid $dark-grey;
+	}
+	ul {
+		display: none;
+	}
+	
+}
+
+.mobile-menu {
+	margin-bottom: 60px;
+	display: none;
+}
+
+
+.primary-nav {
+	display: none;
+}
+
+#searchform {
+	position: relative;
+}
+
+#searchsubmit {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	cursor: pointer;
+	border-style: none;
+	text-indent: -9999px;
+	background: url(../twodelighted-theme/assets/images/inline-search.svg) no-repeat;
+
+		&:hover,
+		&:focus {
+			color: $hover;
+		}
+}
+
+.to-top, .primary-click-menu, .primary-close-menu {
+    display: none;
+    cursor: pointer;
+    width: 32px;
+    position: fixed;
+    right: 2em;
+	z-index: 2000;
+	&:hover {
+	    color: $violet;
+	    transform:scale(1.1);
+	}
+}
+
+.primary-close-menu {
+	width: 26px;
+}
+
+.primary-click-menu, .primary-close-menu {
+	top: 1em;
+}
+
+.to-top {
+	bottom: 1em;
+}
+
+.show-header {
+	position: fixed;
+	z-index: 99999;
+}
+
+
+
+/*********** Media Queries ***********/
+
+@media (min-width: $m) {
+
+	.primary-nav {
+		display: flex;
+  		display:-webkit-flex;
+  		display: -ms-flexbox;
+	}
+
+	.mobile-nav, .mobile-access {
+		display: none;
+	}
+
+	.header-search-button, .header-exit-button {
+		padding: 13px 10px 10px;
+    	width: 42px;
+	}
+
+	#logo {
+		margin: 0;
+		svg {
+			width: 400px;
+			height: 116px;
+		}
+	}
+
+	#searchsubmit {
+		width: 25px;
+		right: 8px;
+		top: 8px;
+	}
+
+
+
+}

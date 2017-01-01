@@ -1,0 +1,85 @@
+$thumbwidth: 100%; /* Set to whatever width your actual thumbs are */
+
+
+.grid .load-more {
+    display: inline-block;
+}
+
+.grid-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: $thumbwidth;
+    padding: .5em;
+    &:nth-of-type(3) {
+        margin-right: 0; /* Removes the margin on every third item (end of the row) */
+    }
+    .caption {
+        padding: 5px 0;
+    }
+    img:hover {
+        opacity: 0.5; /* This gives the whole thing a fade on hover */
+    }
+    .more-tag {
+        background-color: $violet;
+        color: $white;
+        margin: -2em 0 2em;
+        border: none;
+        padding: .8em;
+        width: 50%;
+        &:hover {
+            background-color: $dark-grey;
+        }
+    }
+    
+}
+
+.archive-header {
+    text-align: center;
+}
+
+h1.archive-title {
+    color: $gold;
+    display: inline-block;
+    margin: 1em auto;
+    padding: .9em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.grid {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+}
+
+.grid-item .entry-excerpt {
+    background-color: $white;
+    margin: 0;
+    display: block;
+    padding: 1.5em;
+    text-align: center;
+    @extend %transition;
+    &:hover p {
+        max-height: 200px;
+    }
+    p {
+        @extend %transition;
+        max-height: 70px;
+        overflow: hidden; 
+    }
+}
+
+/*********** Media Queries ***********/
+
+@media (min-width: $m) {
+    .grid {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+        -moz-column-gap: 1em;
+        -webkit-column-gap: 1em;
+        column-gap: 1em;
+    }
+
+}

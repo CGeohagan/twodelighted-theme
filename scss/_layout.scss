@@ -1,0 +1,57 @@
+body {
+	background: $color-body;
+	margin: 0;
+	padding: 0;
+}
+#page {
+	width: 100%;
+	padding: 0px;
+}
+#primary,
+#footer,
+#secondary,
+#nav-below,
+.row,
+.entry-content {
+	@include clearfix;
+}
+
+.col {
+	margin: 0 1em; 
+}
+
+.archive-col {
+	
+}
+
+
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+
+@media (min-width: $xs) {
+
+	/* Layout Container */
+
+	.container {
+		max-width: $max-width;
+		margin: 0 auto;
+	}
+	.col { 
+		display: block;
+		max-width: $max-width;
+		margin: 0 auto;
+	}
+	
+}
+
+
+
+
+/* Sticky footer */
+@include sticky-footer( $footerheight, '#page','#main','#footer');
+
+.sticky {}
