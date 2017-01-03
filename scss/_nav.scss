@@ -250,6 +250,7 @@ input#s {
 		display: flex;
   		display:-webkit-flex;
   		display: -ms-flexbox;
+  		height: 156px;
 	}
 
 	.mobile-nav, .mobile-access {
@@ -263,6 +264,7 @@ input#s {
 
 	#logo {
 		margin: 0;
+		align-self: center;
 		svg {
 			width: 400px;
 			height: 116px;
